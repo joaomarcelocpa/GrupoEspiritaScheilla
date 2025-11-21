@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Assistência Social - Costura",
+    "description": "Atividade de assistência social com trabalhos de costura",
+    "time_start": "13:00",
+    "time_end": null,
+    "location": "Centro Espírita",
+    "category": "Assistência Social",
+    "dia_semana": "Segunda-feira"
+  },
+  {
+    "id": 2,
+    "title": "Evangelização Infantil",
+    "description": "Evangelização Infantil e Estudo com os Pais",
+    "time_start": "18:00",
+    "time_end": "19:00",
+    "location": "Centro Espírita",
+    "category": "Evangelização",
+    "dia_semana": "Segunda-feira"
+  },
+  {
+    "id": 3,
+    "title": "Estudo da Doutrina Espírita (Virtual)",
+    "description": "Estudo da Doutrina Espírita (modalidade virtual)",
+    "time_start": "20:00",
+    "time_end": "21:15",
+    "location": "Virtual",
+    "category": "Estudos",
+    "dia_semana": "Segunda-feira"
+  },
+  {
+    "id": 4,
+    "title": "Estudo das Obras de André Luiz",
+    "description": "Estudo das Obras de André Luiz",
+    "time_start": "19:00",
+    "time_end": "20:00",
+    "location": "Centro Espírita",
+    "category": "Estudos",
+    "dia_semana": "Terça-feira"
+  },
+  {
+    "id": 5,
+    "title": "Atendimento Fraterno",
+    "description": "Atendimento Fraterno",
+    "time_start": "20:00",
+    "time_end": "21:30",
+    "location": "Centro Espírita",
+    "category": "Atendimento",
+    "dia_semana": "Terça-feira"
+  },
+  {
+    "id": 6,
+    "title": "Reunião Evangélico-doutrinária e Passes",
+    "description": "Reunião Evangélico-doutrinária e Passes",
+    "time_start": "20:00",
+    "time_end": "21:30",
+    "location": "Centro Espírita",
+    "category": "Reunião",
+    "dia_semana": "Terça-feira"
+  },
+  {
+    "id": 7,
+    "title": "Biblioteca",
+    "description": "Biblioteca disponível para empréstimos e consultas",
+    "time_start": "20:00",
+    "time_end": "21:30",
+    "location": "Centro Espírita",
+    "category": "Outros",
+    "dia_semana": "Terça-feira"
+  },
+  {
+    "id": 8,
+    "title": "Pré-mocidade",
+    "description": "Atividade de Pré-mocidade",
+    "time_start": "18:30",
+    "time_end": "19:30",
+    "location": "Centro Espírita",
+    "category": "Evangelização",
+    "dia_semana": "Quinta-feira"
+  },
+  {
+    "id": 9,
+    "title": "Reunião Evangélico-doutrinária e Passes",
+    "description": "Reunião Evangélico-doutrinária e Passes",
+    "time_start": "17:30",
+    "time_end": "18:30",
+    "location": "Centro Espírita",
+    "category": "Reunião",
+    "dia_semana": "Sexta-feira"
+  },
+  {
+    "id": 10,
+    "title": "Reunião de Tratamento Espiritual",
+    "description": "Reunião de Tratamento Espiritual (1º e 3º sábados do mês)",
+    "time_start": "14:00",
+    "time_end": null,
+    "location": "Centro Espírita",
+    "category": "Tratamento Espiritual",
+    "dia_semana": "Sábado"
+  },
+  {
+    "id": 11,
+    "title": "Mocidade",
+    "description": "Atividade de Mocidade",
+    "time_start": "09:30",
+    "time_end": "11:30",
+    "location": "Centro Espírita",
+    "category": "Evangelização",
+    "dia_semana": "Domingo"
+  },
+  {
+    "id": 12,
+    "title": "Assistência Social Espírita",
+    "description": "Assistência Social Espírita (1º, 2º, 3º e 4º domingos do mês)",
+    "time_start": "09:00",
+    "time_end": "11:30",
+    "location": "Centro Espírita",
+    "category": "Assistência Social",
+    "dia_semana": "Domingo"
+  }
+]
