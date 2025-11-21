@@ -1,10 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react"
+import { useState } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "./button"
 import CalendarModal from "./calendar-modal"
-import campaignService, { Campaign } from "@/app/api/services/campaign.service"
 import weeklyEventsData from "@/app/api/utils/events.json"
 
 interface Event {
@@ -42,31 +41,9 @@ const InteractiveCalendar = () => {
     const [currentDate, setCurrentDate] = useState(new Date())
     const [selectedDate, setSelectedDate] = useState<string | null>(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [campaigns, setCampaigns] = useState<Campaign[]>([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
-
-    useEffect(() => {
-        const fetchCampaigns = async () => {
-            try {
-                setLoading(true)
-                setError(null)
-                const data = await campaignService.listCampaigns()
-                setCampaigns(data)
-            } catch (err) {
-                console.error("Erro ao carregar campanhas:", err)
-                setError("Não foi possível carregar as campanhas")
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        fetchCampaigns()
-    }, [])
 
     const getAllEvents = (): Event[] => {
-        const campaignEvents = campaignService.campaignsToCalendarEvents(campaigns)
-        return [...campaignEvents]
+        return []
     }
 
     const getDaysInMonth = (date: Date) => {
@@ -78,25 +55,6 @@ const InteractiveCalendar = () => {
     }
 
     const getEventsForDate = (dateString: string) => {
-        const allEvents = getAllEvents()
-
-        const filteredEvents = allEvents.filter((event) => {
-            if (event.type === "campanha" && event.data_fim) {
-                const [year, month, day] = dateString.split('-')
-                const eventDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
-
-                const [startYear, startMonth, startDay] = event.date.split('-')
-                const startDate = new Date(parseInt(startYear), parseInt(startMonth) - 1, parseInt(startDay))
-
-                const [endYear, endMonth, endDay] = event.data_fim.split('-')
-                const endDate = new Date(parseInt(endYear), parseInt(endMonth) - 1, parseInt(endDay))
-
-                return eventDate >= startDate && eventDate <= endDate
-            }
-
-            return event.date === dateString
-        })
-
         const [year, month, day] = dateString.split('-')
         const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
         const dayOfWeek = date.getDay()
@@ -112,7 +70,7 @@ const InteractiveCalendar = () => {
                 type: "evento" as const
             }))
 
-        return [...weeklyEvents, ...filteredEvents]
+        return weeklyEvents
     }
 
     const isToday = (day: number) => {
@@ -154,26 +112,8 @@ const InteractiveCalendar = () => {
     const days = Array.from({ length: daysInMonth }, (_, i) => i + 1)
     const emptyDays = Array.from({ length: firstDay }, (_, i) => i)
 
-    if (loading) {
-        return (
-            <div className="bg-card rounded-xl p-5 shadow-lg border border-border/50 w-full max-w-6xl mx-auto">
-                <div className="flex items-center justify-center h-96">
-                    <div className="text-center">
-                        <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto mb-2" />
-                        <p className="text-muted-foreground">Carregando calendário...</p>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-
     return (
         <div className="bg-card rounded-xl p-3 sm:p-5 shadow-lg border border-border/50 w-full max-w-6xl mx-auto">
-            {error && (
-                <div className="mb-4 p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
-                    <p className="text-sm text-destructive">{error}</p>
-                </div>
-            )}
 
             {/* Header do calendário */}
             <div className="flex items-center justify-between mb-3 sm:mb-5">
