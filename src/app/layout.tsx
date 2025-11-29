@@ -17,12 +17,15 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-    title: "Grupo Espírita Scheilla - Amor, Caridade e Evolução Espiritual",
+    title: "Grupo Espírita Scheilla - Pedro Leopoldo",
     description:
         "Centro espírita dedicado ao estudo da doutrina espírita, práticas de caridade e crescimento espiritual. Venha conhecer nossa comunidade.",
     keywords: "espiritismo, centro espírita, caridade, evolução espiritual, Chico Xavier, Allan Kardec",
     authors: [{ name: "Grupo Espírita Scheilla" }],
     generator: "Next.js",
+    icons: {
+        icon: "/logo-scheilla.png",
+    },
 }
 
 export default function RootLayout({
