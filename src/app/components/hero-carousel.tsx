@@ -58,7 +58,7 @@ const HeroCarousel = () => {
     return (
         <section id="inicio" className="py-4 sm:py-6 md:py-8 px-3 sm:px-4 bg-muted/30">
             <div className="container mx-auto max-w-6xl">
-                <div className="relative h-[50vh] sm:h-[55vh] md:h-[60vh] min-h-[280px] overflow-hidden rounded-xl sm:rounded-2xl shadow-xl">
+                <div className="relative h-[25vh] sm:h-[50vh] md:h-[60vh] min-h-[220px] overflow-hidden rounded-xl sm:rounded-2xl shadow-xl">
                     {slides.map((slide, index) => (
                         <div
                             key={index}

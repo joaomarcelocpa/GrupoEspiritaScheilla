@@ -88,24 +88,29 @@ export async function GET() {
             }
         })
 
-        const lives = videos
-            .filter(video => video.isLive)
+        const allLives = videos.filter(video => video.isLive)
+
+        // Separar lives passadas e futuras
+        const pastLives = allLives
+            .filter(video => !video.isScheduled)
+            .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+            .slice(0, 3) // 3 últimas lives
+
+        const futureLives = allLives
+            .filter(video => video.isScheduled)
             .sort((a, b) => {
-                if (a.isScheduled && !b.isScheduled) return -1
-                if (!a.isScheduled && b.isScheduled) return 1
-
-                if (a.isScheduled && b.isScheduled) {
-                    const dateA = new Date(a.scheduledStartTime || a.publishedAt)
-                    const dateB = new Date(b.scheduledStartTime || b.publishedAt)
-                    return dateA.getTime() - dateB.getTime()
-                }
-
-                return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+                const dateA = new Date(a.scheduledStartTime || a.publishedAt)
+                const dateB = new Date(b.scheduledStartTime || b.publishedAt)
+                return dateA.getTime() - dateB.getTime()
             })
+            .slice(0, 1) // Próxima live futura
+
+        // Combinar: 1 futura + 3 últimas
+        const lives = [...futureLives, ...pastLives]
 
         return NextResponse.json({
             success: true,
-            videos: lives.slice(0, 4)
+            videos: lives
         })
 
     } catch (error) {

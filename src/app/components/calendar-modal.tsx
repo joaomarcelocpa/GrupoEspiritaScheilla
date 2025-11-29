@@ -63,24 +63,24 @@ const CalendarModal = ({ isOpen, onClose, date, events }: CalendarModalProps) =>
 
     return (
         <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-sans font-medium text-primary">
+            <div className="modal-content max-h-[85vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
+                <div className="flex items-center justify-between mb-4 flex-shrink-0">
+                    <h3 className="text-lg sm:text-xl font-sans font-medium text-primary">
                         Eventos - {formatDate(date)}
                     </h3>
-                    <Button variant="ghost" size="icon" onClick={onClose}>
+                    <Button variant="ghost" size="icon" onClick={onClose} className="flex-shrink-0">
                         <X className="w-5 h-5" />
                     </Button>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3 overflow-y-auto flex-1 pr-2">
                     {events.length > 0 ? (
                         events.map((event, index) => (
-                            <div key={index} className="p-4 bg-muted/30 rounded-lg border border-border/30">
+                            <div key={index} className="p-3 sm:p-4 bg-muted/30 rounded-lg border border-border/30">
                                 <div className="flex items-start justify-between mb-2">
-                                    <h4 className="font-sans font-medium text-card-foreground">{event.title}</h4>
+                                    <h4 className="font-sans font-medium text-card-foreground text-sm sm:text-base">{event.title}</h4>
                                 </div>
-                                <div className="text-sm text-muted-foreground space-y-1 font-sans">
+                                <div className="text-xs sm:text-sm text-muted-foreground space-y-1 font-sans">
                                     {event.date && (
                                         <p>
                                             <strong>Data:</strong> {formatDateRange(event.date, event.data_fim)}
@@ -103,7 +103,7 @@ const CalendarModal = ({ isOpen, onClose, date, events }: CalendarModalProps) =>
                             </div>
                         ))
                     ) : (
-                        <p className="text-muted-foreground font-sans text-center py-4">
+                        <p className="text-muted-foreground font-sans text-center py-4 text-sm">
                             Nenhum evento programado para esta data.
                         </p>
                     )}

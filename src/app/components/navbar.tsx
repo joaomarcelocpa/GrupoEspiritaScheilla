@@ -37,21 +37,21 @@ const Navbar = () => {
 
     return (
         <nav className="bg-muted/30 relative z-50 backdrop-blur-md shadow-sm border-b border-border/20">
-            <div className="w-full px-10 py-4">
+            <div className="w-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2 ml-0">
-                        <div className="relative w-20 h-20 rounded-full overflow-hidden bg-transparent p-1">
+                    <div className="flex items-center space-x-2">
+                        <div className="relative w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden bg-transparent p-1 flex-shrink-0">
                             <div className="w-full h-full rounded-full overflow-hidden bg-transparent">
                                 <Image src="/images/logo-scheilla-png.png" alt="Grupo Espírita Scheilla" fill className="object-cover" />
                             </div>
                         </div>
                         <div>
-                            <h1 className="text-3xl font-heading font-medium text-primary tracking-wide">Grupo Espírita Scheilla</h1>
-                            <p className="text-sm font-sans font-light text-muted-foreground tracking-wider">Pedro Leopoldo - MG</p>
+                            <h1 className="text-xl sm:text-2xl lg:text-3xl font-heading font-medium text-primary tracking-wide">Grupo Espírita Scheilla</h1>
+                            <p className="text-xs sm:text-sm font-sans font-light text-muted-foreground tracking-wider">Pedro Leopoldo - MG</p>
                         </div>
                     </div>
 
-                    <div className="hidden md:flex text-lg items-center space-x-8">
+                    <div className="hidden md:flex text-base lg:text-lg items-center space-x-6 lg:space-x-8">
                         {menuItems.map((item) => (
                             <button
                                 key={item.href}
@@ -67,10 +67,10 @@ const Navbar = () => {
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="md:hidden"
+                        className="md:hidden h-9 w-9"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
-                        {isMobileMenuOpen ? <X /> : <Menu />}
+                        {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                     </Button>
                 </div>
 

@@ -44,39 +44,39 @@ const BooksSection = () => {
         <section id="livros" className="py-12 bg-background">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-10">
-                    <h2 className="text-5xl font-heading text-primary mb-3">Biblioteca Espírita</h2>
-                    <p className="text-base font-body text-muted-foreground max-w-2xl mx-auto text-pretty">
+                    <h2 className="text-4xl sm:text-5xl font-heading text-primary mb-3">Biblioteca Espírita</h2>
+                    <p className="text-sm sm:text-base font-body text-muted-foreground max-w-2xl mx-auto text-pretty">
                         Explore nossa seleção de livros espíritas para enriquecer sua jornada de conhecimento
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
                     {books.map((book, index) => (
                         <div
                             key={index}
-                            className="bg-card rounded-xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 group hover:-translate-y-1"
+                            className="bg-card rounded-lg sm:rounded-xl p-3 sm:p-5 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 group hover:-translate-y-1"
                         >
                             <div className="flex flex-col items-center text-center">
-                                <div className="relative w-24 h-36 mb-3 rounded-lg overflow-hidden shadow-md bg-muted flex items-center justify-center">
+                                <div className="relative w-16 h-24 sm:w-20 sm:h-32 lg:w-24 lg:h-36 mb-2 sm:mb-3 rounded-lg overflow-hidden shadow-md bg-muted flex items-center justify-center">
                                     <div className="text-xs text-muted-foreground text-center px-2">
                                         <Image src={book.image} alt={book.title} fill className="object-cover" />
                                     </div>
                                 </div>
 
-                                <h3 className="text-base font-semibold text-card-foreground mb-2 text-balance leading-tight">{book.title}</h3>
+                                <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-card-foreground mb-1 sm:mb-2 text-balance leading-tight">{book.title}</h3>
 
-                                <p className="text-primary font-medium mb-2 text-sm">{book.author}</p>
+                                <p className="text-primary font-medium mb-1 sm:mb-2 text-[10px] sm:text-xs lg:text-sm">{book.author}</p>
 
-                                <p className="text-muted-foreground text-xs text-pretty leading-relaxed">{book.description}</p>
+                                <p className="text-muted-foreground text-[10px] sm:text-xs text-pretty leading-relaxed">{book.description}</p>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <div className="text-center mt-8">
-                    <div className="bg-secondary/20 rounded-xl p-5 max-w-2xl mx-auto border border-secondary/30">
-                        <h3 className="text-lg font-semibold text-foreground mb-2">Biblioteca Física</h3>
-                        <p className="text-muted-foreground text-pretty leading-relaxed text-sm">
+                <div className="text-center mt-6 sm:mt-8">
+                    <div className="bg-secondary/20 rounded-xl p-4 sm:p-5 max-w-2xl mx-auto border border-secondary/30">
+                        <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2">Biblioteca Física</h3>
+                        <p className="text-muted-foreground text-pretty leading-relaxed text-xs sm:text-sm">
                             Visite nosso centro espírita e tenha acesso à nossa biblioteca completa com centenas de obras espíritas
                             para empréstimo e consulta. Funcionamento: Terça, das 20h às 21:30h.
                         </p>
