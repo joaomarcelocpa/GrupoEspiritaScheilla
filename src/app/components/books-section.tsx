@@ -77,8 +77,7 @@ const BooksSection = () => {
                     <div className="bg-secondary/20 rounded-xl p-4 sm:p-5 max-w-2xl mx-auto border border-secondary/30">
                         <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2">Biblioteca Física</h3>
                         <p className="text-muted-foreground text-pretty leading-relaxed text-xs sm:text-sm">
-                            Visite nosso centro espírita e tenha acesso à nossa biblioteca completa com centenas de obras espíritas
-                            para empréstimo e consulta. Funcionamento: Terça, das 20h às 21:30h.
+                            Visite nosso centro espírita e tenha acesso à nossa biblioteca completa com centenas de obras espíritas. Funcionamento: Terça, das 20h às 21:30h.
                         </p>
                     </div>
                 </div>

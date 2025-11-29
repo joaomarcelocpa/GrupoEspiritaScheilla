@@ -7,6 +7,7 @@ import BooksSection from "@/app/components/books-section"
 import PhotosSection from "@/app/components/photos-section"
 import LocationSection from "@/app/components/location-section"
 import Footer from "@/app/components/footer"
+import ScrollToTop from "@/app/components/scroll-to-top"
 
 export default function Home() {
     return (
@@ -22,6 +23,7 @@ export default function Home() {
                 <LocationSection />
             </main>
             <Footer />
+            <ScrollToTop />
         </div>
     )
 }

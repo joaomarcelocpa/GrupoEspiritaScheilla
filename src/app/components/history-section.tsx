@@ -59,7 +59,7 @@ const HistorySection = () => {
                     {/* Seção 2: Card Scheilla + Foto Scheilla */}
                     <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
                         <div className="bg-secondary/20 rounded-xl p-4 border border-secondary/30 w-full">
-                            <h4 className="text-base font-semibold text-foreground mb-3">Quem foi Scheilla?</h4>
+                            <h4 className="text-base sm:text-lg font-semibold text-foreground mb-3">Quem foi Scheilla?</h4>
                             <p className="text-muted-foreground text-pretty leading-relaxed text-xs sm:text-sm">
                                 Scheilla, cujo nome hoje ilumina nossa Casa Espírita, foi em vida uma jovem enfermeira alemã dotada de profunda ternura e vocação para servir. Era descrita como uma presença suave: olhar azul sereno, cabelos loiros, e um comportamento sempre humilde e acolhedor. Mais do que características físicas, porém, Scheilla carregava uma sensibilidade rara — uma generosidade que se expressava nos gestos cotidianos, no cuidado com os enfermos, na paciência com os mais fragilizados e na dedicação àqueles que sofriam.
                             </p>
@@ -71,20 +71,16 @@ const HistorySection = () => {
                             </p>
                         </div>
 
-                        <div className="flex justify-center items-start">
-                            <div className="flex flex-col items-center max-w-[160px] sm:max-w-none">
-                                <div className="relative w-32 h-44 sm:w-40 sm:h-56 lg:w-48 lg:h-64 rounded-2xl overflow-hidden shadow-2xl mb-3 sm:mb-4 bg-muted flex-shrink-0">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                                    <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                                        <Image src="/images/foto-scheilla.jpg" alt="Irma Scheilla" fill className="object-cover" />
-                                    </div>
-                                </div>
-                                <div className="text-center max-w-[160px] sm:max-w-xs">
-                                    <h4 className="text-sm sm:text-base lg:text-lg font-semibold text-foreground mb-1 sm:mb-2">Irmã Scheilla</h4>
-                                    <p className="text-muted-foreground text-pretty leading-relaxed text-xs sm:text-sm">
-                                        Devotada enfermeira que viveu na Alemanha, Scheilla experienciou sua última encarnação com simplicidade e servindo aos enfermos que a rodeavam.
-                                    </p>
-                                </div>
+                        <div className="flex flex-col items-center justify-start lg:justify-center">
+                            <div className="relative w-32 h-44 sm:w-40 sm:h-56 lg:w-48 lg:h-64 rounded-2xl overflow-hidden shadow-2xl mb-3 bg-muted">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                <Image src="/images/foto-scheilla.jpg" alt="Irma Scheilla" fill className="object-cover" />
+                            </div>
+                            <div className="text-center max-w-xs">
+                                <h4 className="text-sm sm:text-base lg:text-lg font-semibold text-foreground mb-2">Irmã Scheilla</h4>
+                                <p className="text-muted-foreground text-pretty leading-relaxed text-xs sm:text-sm">
+                                    Devotada enfermeira que viveu na Alemanha, Scheilla experienciou sua última encarnação com simplicidade e servindo aos enfermos que a rodeavam.
+                                </p>
                             </div>
                         </div>
                     </div>
