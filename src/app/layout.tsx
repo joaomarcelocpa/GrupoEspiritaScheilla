@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     authors: [{ name: "Grupo Espírita Scheilla" }],
     generator: "Next.js",
     icons: {
-        icon: "/logo-scheilla.png",
+        icon: "/images/logo-scheilla-png.png",
     },
 }
 
