@@ -90,23 +90,11 @@ export async function GET() {
 
         const allLives = videos.filter(video => video.isLive)
 
-        // Separar lives passadas e futuras
-        const pastLives = allLives
+        // Pegar apenas as 4 últimas lives passadas (mais recentes)
+        const lives = allLives
             .filter(video => !video.isScheduled)
             .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-            .slice(0, 3) // 3 últimas lives
-
-        const futureLives = allLives
-            .filter(video => video.isScheduled)
-            .sort((a, b) => {
-                const dateA = new Date(a.scheduledStartTime || a.publishedAt)
-                const dateB = new Date(b.scheduledStartTime || b.publishedAt)
-                return dateA.getTime() - dateB.getTime()
-            })
-            .slice(0, 1) // Próxima live futura
-
-        // Combinar: 1 futura + 3 últimas
-        const lives = [...futureLives, ...pastLives]
+            .slice(0, 4) // 4 últimas lives
 
         return NextResponse.json({
             success: true,
