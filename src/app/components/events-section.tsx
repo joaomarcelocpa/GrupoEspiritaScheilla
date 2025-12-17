@@ -2,7 +2,7 @@ import InteractiveCalendar from "./interactive-calendar"
 
 const EventsSection = () => {
     return (
-        <section id="eventos" className="py-12 bg-muted/30">
+        <section id="reunioes" className="py-12 bg-muted/30">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading text-primary mb-3 tracking-wide">Reuniões Públicas</h2>

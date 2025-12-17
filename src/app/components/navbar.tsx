@@ -19,7 +19,7 @@ const Navbar = () => {
 
     const menuItems = [
         { label: "Início", href: "#inicio" },
-        { label: "Eventos", href: "#eventos" },
+        { label: "Reuniões", href: "#reunioes" },
         { label: "História", href: "#historia" },
         { label: "Vídeos", href: "#videos" },
         { label: "Livros", href: "#livros" },
@@ -30,7 +30,15 @@ const Navbar = () => {
     const scrollToSection = (href: string) => {
         const element = document.querySelector(href)
         if (element) {
-            element.scrollIntoView({ behavior: "smooth" })
+            const navbar = document.querySelector('nav')
+            const navbarHeight = navbar?.offsetHeight || 0
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+            const offsetPosition = elementPosition - navbarHeight - 20 // 20px extra padding
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            })
             setIsMobileMenuOpen(false)
         }
     }

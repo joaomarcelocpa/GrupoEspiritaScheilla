@@ -55,8 +55,8 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="#eventos" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-xs sm:text-base">
-                                    Eventos
+                                <a href="#reunioes" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-xs sm:text-base">
+                                    Reuniões
                                 </a>
                             </li>
                             <li>
@@ -82,12 +82,12 @@ const Footer = () => {
                         <h4 className="text-base sm:text-lg font-semibold text-card-foreground mb-3 sm:mb-4">Contato</h4>
                         <div className="space-y-2 sm:space-y-3">
                             <div className="flex items-center space-x-2 sm:space-x-3">
-                                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+                                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary shrink-0" />
                                 <span className="text-muted-foreground text-xs sm:text-sm">(31) 3661-3884</span>
                             </div>
                             <div className="flex items-center space-x-2 sm:space-x-3">
-                                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
-                                <span className="text-muted-foreground text-xs sm:text-sm break-words">gespl.livraria@gmail.com</span>
+                                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary shrink-0" />
+                                <span className="text-muted-foreground text-xs sm:text-sm wrap-break-word">gespl.livraria@gmail.com</span>
                             </div>
                         </div>
                     </div>
